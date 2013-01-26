@@ -1,6 +1,6 @@
 CountAnything
 =============
-**[Project homepage](http://github.com/raphaelr/countanything)** - **[Download link](https://dl.dropbox.com/u/104907125/CountAnything.zip)**
+**[Project homepage](http://tapesoftware.net/content/countanything)** - **[Download link](http://lambda.tapesoftware.net/CountAnything.zip)**
 
 This is a generic (Windows-only) counting application. It allows the user to have a counter. Which counts. It's that simple. It was designed for the [speedrunning community](http://speedrunslive.com). If you see [tape1](http://twitch.tv/tape1) streaming, say hi!
 
