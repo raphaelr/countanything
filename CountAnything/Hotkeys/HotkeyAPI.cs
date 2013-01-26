@@ -21,7 +21,7 @@ namespace CountAnything.Hotkeys {
             if(hotkey.Control) modifiers |= 0x0002;
             if(hotkey.Shift) modifiers |= 0x0004;
             
-            RegisterHotKey(owner.Handle, id, modifiers, (uint) hotkey.Keycode);
+            RegisterHotKey(owner.Handle, id, modifiers, (uint) hotkey.KeyCode);
         }
 
         public static void Unregister(IWin32Window owner, int id)

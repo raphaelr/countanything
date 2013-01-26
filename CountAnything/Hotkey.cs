@@ -8,7 +8,7 @@ namespace CountAnything {
         public bool Control { get; set; }
         public bool Shift { get; set; }
         public bool Alt { get; set; }
-        public int Keycode { get; set; }
+        public Keys KeyCode { get; set; }
 
         public static Hotkey FromEventArgs(KeyEventArgs e)
         {
@@ -16,7 +16,7 @@ namespace CountAnything {
             self.Alt = (e.Modifiers & Keys.Alt) != 0;
             self.Control = (e.Modifiers & Keys.Control) != 0;
             self.Shift = (e.Modifiers & Keys.Shift) != 0;
-            self.Keycode = e.KeyValue;
+            self.KeyCode = e.KeyCode;
             return self;
         }
 
@@ -26,14 +26,15 @@ namespace CountAnything {
             if(Control) elements.Add("Ctrl");
             if(Shift) elements.Add("Shift");
             if(Alt) elements.Add("Alt");
-            elements.Add(Enum.GetName(typeof(Keys), Keycode));
+            elements.Add(Enum.GetName(typeof(Keys), KeyCode));
 
             return string.Join(" + ", elements.ToArray());
         }
 
         protected bool Equals(Hotkey other)
         {
-            return Control.Equals(other.Control) && Shift.Equals(other.Shift) && Alt.Equals(other.Alt) && Keycode == other.Keycode;
+            return Control == other.Control && Shift == other.Shift && Alt == other.Alt &&
+                   KeyCode == other.KeyCode;
         }
 
         public override bool Equals(object obj)
@@ -49,7 +50,7 @@ namespace CountAnything {
                 int hashCode = Control.GetHashCode();
                 hashCode = (hashCode*397) ^ Shift.GetHashCode();
                 hashCode = (hashCode*397) ^ Alt.GetHashCode();
-                hashCode = (hashCode*397) ^ Keycode;
+                hashCode = (hashCode*397) ^ (int) KeyCode;
                 return hashCode;
             }
         }

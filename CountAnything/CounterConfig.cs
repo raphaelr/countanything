@@ -34,7 +34,7 @@ namespace CountAnything {
                         Alt = false,
                         Control = false,
                         Shift = false,
-                        Keycode = (int)Keys.Insert
+                        KeyCode = Keys.Insert
                     },
                 };
                 return self;
