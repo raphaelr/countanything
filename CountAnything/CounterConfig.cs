@@ -157,7 +157,7 @@ namespace CountAnything {
 
                     HotkeyIncrement = new Hotkey {
                         Alt = false,
-                        Control = false,
+                        Control = true,
                         Shift = false,
                         KeyCode = Keys.Insert
                     },
@@ -172,7 +172,7 @@ namespace CountAnything {
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
+            var handler = PropertyChanged;
             if(handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }

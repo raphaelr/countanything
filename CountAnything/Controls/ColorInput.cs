@@ -14,10 +14,9 @@ namespace CountAnything.Controls {
             get { return _selectedColor; }
             set
             {
-                if(_selectedColor != value) {
-                    _selectedColor = value;
-                    OnSelectedColorChanged();
-                }
+                if(_selectedColor == value) return;
+                _selectedColor = value;
+                OnSelectedColorChanged();
             }
         }
 
