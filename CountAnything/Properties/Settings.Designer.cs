@@ -27,7 +27,7 @@ namespace CountAnything.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [SettingsSerializeAs(SettingsSerializeAs.Binary)]
+        [global::System.Configuration.SettingsSerializeAs(SettingsSerializeAs.Binary)]
         public global::CountAnything.CounterConfig Config {
             get {
                 return ((global::CountAnything.CounterConfig)(this["Config"]));

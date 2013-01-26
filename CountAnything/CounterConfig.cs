@@ -6,12 +6,13 @@ namespace CountAnything {
     [Serializable]
     public class CounterConfig {
         public int Max { get; set; }
-        public Hotkey Increment { get; set; }
         public Color NotDone { get; set; }
         public Color Done { get; set; }
         public Color Background { get; set; }
-        public FontDescription Font { get; set; }
         public string Format { get; set; }
+
+        public FontDescription Font { get; set; }
+        public Hotkey Increment { get; set; }
 
         public static CounterConfig Default
         {
