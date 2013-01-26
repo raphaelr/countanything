@@ -12,12 +12,13 @@ namespace CountAnything.Forms {
             
             _config = Settings.Default.Config ?? CounterConfig.Default;
             numMax.Value = _config.Max;
-            hotkeyIncrement.Hotkey = _config.Increment;
-            colorDone.SelectedColor = _config.Done;
-            colorNotDone.SelectedColor = _config.NotDone;
-            colorBackground.SelectedColor = _config.Background;
+            hotkeyIncrement.Hotkey = _config.HotkeyIncrement;
+            colorDone.SelectedColor = _config.ColorDone;
+            colorNotDone.SelectedColor = _config.ColorNotDone;
+            colorBackground.SelectedColor = _config.ColorBackground;
             fontInput.SelectedFont = _config.Font;
             textFormat.Text = _config.Format;
+            numDoubleTapPrevention.Value = (decimal) _config.DoubleTapPrevention.TotalMilliseconds;
         }
 
         private void ButtonStartOnClick(object sender, EventArgs e)
@@ -40,12 +41,14 @@ namespace CountAnything.Forms {
         private void UpdateConfig()
         {
             _config.Max = (int) numMax.Value;
-            _config.Increment = hotkeyIncrement.Hotkey;
-            _config.Done = colorDone.SelectedColor;
-            _config.NotDone = colorNotDone.SelectedColor;
-            _config.Background = colorBackground.SelectedColor;
+            _config.HotkeyIncrement = hotkeyIncrement.Hotkey;
+            _config.ColorDone = colorDone.SelectedColor;
+            _config.ColorNotDone = colorNotDone.SelectedColor;
+            _config.ColorBackground = colorBackground.SelectedColor;
             _config.Font = fontInput.SelectedFont;
             _config.Format = textFormat.Text;
+            _config.DoubleTapPrevention =
+                TimeSpan.FromMilliseconds((double) numDoubleTapPrevention.Value);
         }
     }
 }

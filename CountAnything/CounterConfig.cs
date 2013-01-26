@@ -6,13 +6,15 @@ namespace CountAnything {
     [Serializable]
     public class CounterConfig {
         public int Max { get; set; }
-        public Color NotDone { get; set; }
-        public Color Done { get; set; }
-        public Color Background { get; set; }
         public string Format { get; set; }
+        public TimeSpan DoubleTapPrevention { get; set; }
 
+        public Color ColorNotDone { get; set; }
+        public Color ColorDone { get; set; }
+        public Color ColorBackground { get; set; }
         public FontDescription Font { get; set; }
-        public Hotkey Increment { get; set; }
+
+        public Hotkey HotkeyIncrement { get; set; }
 
         public static CounterConfig Default
         {
@@ -20,18 +22,20 @@ namespace CountAnything {
             {
                 var self = new CounterConfig {
                     Max = 60,
-                    Increment = new Hotkey {
+                    Format = "{0}/{1}",
+                    DoubleTapPrevention = TimeSpan.FromMilliseconds(500),
+
+                    ColorNotDone = Color.Orange,
+                    ColorDone = Color.LimeGreen,
+                    ColorBackground = Color.Black,
+                    Font = new FontDescription("Arial", 40, FontStyle.Bold),
+
+                    HotkeyIncrement = new Hotkey {
                         Alt = false,
                         Control = false,
                         Shift = false,
-                        Keycode = (int) Keys.Insert
+                        Keycode = (int)Keys.Insert
                     },
-
-                    NotDone = Color.Orange,
-                    Done = Color.LimeGreen,
-                    Background = Color.Black,
-                    Font = new FontDescription("Arial", 40, FontStyle.Bold),
-                    Format = "{0}/{1}",
                 };
                 return self;
             }

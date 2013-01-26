@@ -7,12 +7,15 @@ namespace CountAnything.Hotkeys {
     class HotkeyManager {
         public delegate void HotkeyHandler();
 
+        public TimeSpan DoubleTapPrevention { get; set; }
+
         private readonly Agent _agent;
         private int _idCounter;
 
         public HotkeyManager()
         {
             _agent = new Agent();
+            _agent.HotkeyTriggered += AgentOnHotkeyTriggered;
         }
 
         public void Map(Hotkey hotkey, HotkeyHandler action)
@@ -31,16 +34,27 @@ namespace CountAnything.Hotkeys {
             _agent.RemoveMappingByHotkey(hotkey);
         }
 
+        private void AgentOnHotkeyTriggered(object sender, HotkeyEventArgs e)
+        {
+            if(e.Mapping.LastPress + DoubleTapPrevention < DateTime.Now) {
+                e.Mapping.LastPress = DateTime.Now;
+                e.Mapping.Action();
+            }
+        }
+
         private class HotkeyMapping {
             public Hotkey Hotkey;
             public HotkeyHandler Action;
             public int Id;
             public bool Registered;
+            public DateTime LastPress;
         }
 
         private class Agent : Form {
             private readonly List<HotkeyMapping> _mappings;
             private bool _hasHandle;
+
+            public event EventHandler<HotkeyEventArgs> HotkeyTriggered;
 
             public Agent()
             {
@@ -92,7 +106,7 @@ namespace CountAnything.Hotkeys {
                 if(m.Msg == 0x0312) {
                     for(var i = 0; i < _mappings.Count; i++) {
                         if(_mappings[i].Id == (int) m.WParam) {
-                            _mappings[i].Action();
+                            OnHotkeyTriggered(new HotkeyEventArgs(_mappings[i]));
                         }
                     }
                 }
@@ -110,6 +124,21 @@ namespace CountAnything.Hotkeys {
                 if(!mapping.Registered) return;
                 HotkeyApi.Unregister(this, mapping.Id);
                 mapping.Registered = false;
+            }
+
+            private void OnHotkeyTriggered(HotkeyEventArgs e)
+            {
+                var handler = HotkeyTriggered;
+                if(handler != null) handler(this, e);
+            }
+        }
+
+        private class HotkeyEventArgs : EventArgs {
+            public HotkeyMapping Mapping { get; private set; }
+
+            public HotkeyEventArgs(HotkeyMapping mapping)
+            {
+                Mapping = mapping;
             }
         }
     }

@@ -17,10 +17,11 @@ namespace CountAnything.Forms {
             _config = config;
             _font = _config.Font.CreateFont();
             _hotkeyManager = new HotkeyManager();
+            _hotkeyManager.DoubleTapPrevention = config.DoubleTapPrevention;
 
             InitializeComponent();
             WindowDragHelper.EnableDrag(this, textCounter);
-            _hotkeyManager.Map(config.Increment, Increment);
+            _hotkeyManager.Map(config.HotkeyIncrement, Increment);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -32,7 +33,7 @@ namespace CountAnything.Forms {
             ClientSize = new Size(OuterPadding + (int) maxDimension.Width, OuterPadding + (int) maxDimension.Height);
 
             _remaining = _config.Max;
-            BackColor = _config.Background;
+            BackColor = _config.ColorBackground;
             textCounter.Font = _font;
             UpdateCounter();
         }
@@ -50,7 +51,7 @@ namespace CountAnything.Forms {
 
         private void UpdateCounter()
         {
-            textCounter.ForeColor = _remaining <= 0 ? _config.Done : _config.NotDone;
+            textCounter.ForeColor = _remaining <= 0 ? _config.ColorDone : _config.ColorNotDone;
             textCounter.Text = string.Format(_config.Format, _config.Max - _remaining, _config.Max);
             CenterText();
         }
