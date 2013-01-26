@@ -17,6 +17,11 @@ namespace CountAnything {
             self.Control = (e.Modifiers & Keys.Control) != 0;
             self.Shift = (e.Modifiers & Keys.Shift) != 0;
             self.KeyCode = e.KeyCode;
+
+            if(self.KeyCode == Keys.ControlKey || self.KeyCode == Keys.ShiftKey) {
+                self.KeyCode = Keys.None;
+            }
+
             return self;
         }
 
@@ -26,7 +31,8 @@ namespace CountAnything {
             if(Control) elements.Add("Ctrl");
             if(Shift) elements.Add("Shift");
             if(Alt) elements.Add("Alt");
-            elements.Add(Enum.GetName(typeof(Keys), KeyCode));
+
+            elements.Add(KeyCode == Keys.None ? "" : Enum.GetName(typeof(Keys), KeyCode));
 
             return string.Join(" + ", elements.ToArray());
         }
