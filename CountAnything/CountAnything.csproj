@@ -68,7 +68,8 @@
     </Compile>
     <Compile Include="Forms\WindowDragHelper.cs" />
     <Compile Include="Hotkey.cs" />
-    <Compile Include="Hotkeys\HotkeyAPI.cs" />
+    <Compile Include="Hotkeys\HotkeyApi.cs" />
+    <Compile Include="Hotkeys\HotkeyManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ConfigForm.resx">

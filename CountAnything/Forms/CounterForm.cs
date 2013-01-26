@@ -1,22 +1,26 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using CountAnything.Hotkeys;
 
 namespace CountAnything.Forms {
     public partial class CounterForm : Form {
         private const int OuterPadding = 5;
-        private const int IncrementId = 1;
 
         private readonly CounterConfig _config;
         private readonly Font _font;
+        private readonly HotkeyManager _hotkeyManager;
         private int _remaining;
 
         public CounterForm(CounterConfig config)
         {
             _config = config;
             _font = _config.Font.CreateFont();
+            _hotkeyManager = new HotkeyManager();
+
             InitializeComponent();
             WindowDragHelper.EnableDrag(this, textCounter);
+            _hotkeyManager.Map(config.Increment, Increment);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -33,31 +37,6 @@ namespace CountAnything.Forms {
             UpdateCounter();
         }
 
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-            HotkeyApi.Register(this, IncrementId, _config.Increment);
-        }
-
-        protected override void OnHandleDestroyed(EventArgs e)
-        {
-            base.OnHandleDestroyed(e);
-            HotkeyApi.Unregister(this, IncrementId);
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            switch(m.Msg) {
-            case 0x0312:
-                if((int)m.WParam == IncrementId) {
-                    Increment();
-                }
-                return;
-            }
-
-            base.WndProc(ref m);
-        }
-        
         protected override void OnResize(EventArgs e)
         {
             CenterText();

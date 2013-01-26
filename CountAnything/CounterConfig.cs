@@ -27,9 +27,9 @@ namespace CountAnything {
                         Keycode = (int) Keys.Insert
                     },
 
-                    NotDone = Color.OrangeRed,
-                    Done = Color.Green,
-                    Background = SystemColors.Control,
+                    NotDone = Color.Orange,
+                    Done = Color.LimeGreen,
+                    Background = Color.Black,
                     Font = new FontDescription("Arial", 40, FontStyle.Bold),
                     Format = "{0}/{1}",
                 };
