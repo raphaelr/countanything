@@ -10,7 +10,7 @@ namespace CountAnything {
         public Color NotDone { get; set; }
         public Color Done { get; set; }
         public Color Background { get; set; }
-        public Font Font { get; set; }
+        public FontDescription Font { get; set; }
         public string Format { get; set; }
 
         public static CounterConfig Default
@@ -29,7 +29,7 @@ namespace CountAnything {
                     NotDone = Color.OrangeRed,
                     Done = Color.Green,
                     Background = SystemColors.Control,
-                    Font = new Font("Arial", 40, FontStyle.Bold),
+                    Font = new FontDescription("Arial", 40, FontStyle.Bold),
                     Format = "{0}/{1}",
                 };
                 return self;

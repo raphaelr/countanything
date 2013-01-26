@@ -16,7 +16,7 @@ namespace CountAnything {
             colorDone.SelectedColor = _config.Done;
             colorNotDone.SelectedColor = _config.NotDone;
             colorBackground.SelectedColor = _config.Background;
-            fontInput.Font = _config.Font;
+            fontInput.SelectedFont = _config.Font;
             textFormat.Text = _config.Format;
         }
 
@@ -44,7 +44,7 @@ namespace CountAnything {
             _config.Done = colorDone.SelectedColor;
             _config.NotDone = colorNotDone.SelectedColor;
             _config.Background = colorBackground.SelectedColor;
-            _config.Font = fontInput.Font;
+            _config.Font = fontInput.SelectedFont;
             _config.Format = textFormat.Text;
         }
     }

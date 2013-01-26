@@ -25,6 +25,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigForm));
             this.label1 = new System.Windows.Forms.Label();
             this.numMax = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -161,9 +162,9 @@
             this.colorBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorBackground.Location = new System.Drawing.Point(112, 124);
             this.colorBackground.Name = "colorBackground";
+            this.colorBackground.SelectedColor = System.Drawing.Color.Black;
             this.colorBackground.Size = new System.Drawing.Size(240, 24);
             this.colorBackground.TabIndex = 9;
-            this.colorBackground.SelectedColor = System.Drawing.Color.Black;
             // 
             // colorDone
             // 
@@ -171,9 +172,9 @@
             this.colorDone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorDone.Location = new System.Drawing.Point(112, 94);
             this.colorDone.Name = "colorDone";
+            this.colorDone.SelectedColor = System.Drawing.Color.Black;
             this.colorDone.Size = new System.Drawing.Size(240, 24);
             this.colorDone.TabIndex = 7;
-            this.colorDone.SelectedColor = System.Drawing.Color.Black;
             // 
             // colorNotDone
             // 
@@ -181,9 +182,9 @@
             this.colorNotDone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorNotDone.Location = new System.Drawing.Point(112, 64);
             this.colorNotDone.Name = "colorNotDone";
+            this.colorNotDone.SelectedColor = System.Drawing.Color.Black;
             this.colorNotDone.Size = new System.Drawing.Size(240, 24);
             this.colorNotDone.TabIndex = 4;
-            this.colorNotDone.SelectedColor = System.Drawing.Color.Black;
             // 
             // hotkeyIncrement
             // 

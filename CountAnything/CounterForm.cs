@@ -8,24 +8,27 @@ namespace CountAnything {
         private const int IncrementId = 1;
 
         private readonly CounterConfig _config;
+        private readonly Font _font;
         private int _remaining;
 
         public CounterForm(CounterConfig config)
         {
             _config = config;
+            _font = _config.Font.CreateFont();
             InitializeComponent();
         }
 
         protected override void OnLoad(EventArgs e)
         {
             var graphics = CreateGraphics();
-            var maxDimension = graphics.MeasureString(string.Format(_config.Format, _config.Max, _config.Max),
-                                   _config.Font, int.MaxValue);
+            var maxDimension =
+                graphics.MeasureString(string.Format(_config.Format, _config.Max, _config.Max),
+                                       _font, int.MaxValue);
             ClientSize = new Size(OuterPadding + (int) maxDimension.Width, OuterPadding + (int) maxDimension.Height);
 
             _remaining = _config.Max;
             BackColor = _config.Background;
-            textCounter.Font = _config.Font;
+            textCounter.Font = _font;
             UpdateCounter();
         }
 

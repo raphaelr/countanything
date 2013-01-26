@@ -1,12 +1,27 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CountAnything {
     class FontInput : TextBox {
+        private FontDescription _selectedFont;
+        
+        public FontDescription SelectedFont
+        {
+            get { return _selectedFont; }
+            set
+            {
+                if(_selectedFont == value) return;
+                _selectedFont = value;
+                SelectedFontOnUpdate();
+            }
+        }
+
         public FontInput()
         {
             ReadOnly = true;
-            FontUpdated();
+            SelectedFont = FontDescription.FromFont(SystemFonts.DefaultFont);
+            SelectedFontOnUpdate();
         }
 
         protected override void OnClick(EventArgs e)
@@ -14,19 +29,13 @@ namespace CountAnything {
             var fod = new FontDialog();
             var result = fod.ShowDialog();
             if(result == DialogResult.OK) {
-                Font = fod.Font;
+                SelectedFont = FontDescription.FromFont(fod.Font);
             }
         }
 
-        protected override void OnFontChanged(EventArgs e)
+        private void SelectedFontOnUpdate()
         {
-            FontUpdated();
-            base.OnFontChanged(e);
-        }
-
-        private void FontUpdated()
-        {
-            Text = string.Format("{0} {1} {2}", Font.Name, Font.Size, Font.Style);
+            Text = SelectedFont == null ? "(null)" : SelectedFont.ToString();
         }
     }
 }
