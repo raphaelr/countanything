@@ -163,7 +163,7 @@
             this.colorBackground.Name = "colorBackground";
             this.colorBackground.Size = new System.Drawing.Size(240, 24);
             this.colorBackground.TabIndex = 9;
-            this.colorBackground.Value = System.Drawing.Color.Black;
+            this.colorBackground.SelectedColor = System.Drawing.Color.Black;
             // 
             // colorDone
             // 
@@ -173,7 +173,7 @@
             this.colorDone.Name = "colorDone";
             this.colorDone.Size = new System.Drawing.Size(240, 24);
             this.colorDone.TabIndex = 7;
-            this.colorDone.Value = System.Drawing.Color.Black;
+            this.colorDone.SelectedColor = System.Drawing.Color.Black;
             // 
             // colorNotDone
             // 
@@ -183,7 +183,7 @@
             this.colorNotDone.Name = "colorNotDone";
             this.colorNotDone.Size = new System.Drawing.Size(240, 24);
             this.colorNotDone.TabIndex = 4;
-            this.colorNotDone.Value = System.Drawing.Color.Black;
+            this.colorNotDone.SelectedColor = System.Drawing.Color.Black;
             // 
             // hotkeyIncrement
             // 

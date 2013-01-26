@@ -46,9 +46,6 @@
     <Compile Include="ColorInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ColorInput.Designer.cs">
-      <DependentUpon>ColorInput.cs</DependentUpon>
-    </Compile>
     <Compile Include="ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,9 +69,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ColorInput.resx">
-      <DependentUpon>ColorInput.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </EmbeddedResource>

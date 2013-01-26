@@ -3,24 +3,23 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace CountAnything {
-    public partial class ColorInput : UserControl {
-        private Color _value;
-        public Color Value
+    class ColorInput : UserControl {
+        private Color _selectedColor;
+        public Color SelectedColor
         {
-            get { return _value; }
+            get { return _selectedColor; }
             set
             {
-                if(_value != value) {
-                    _value = value;
-                    ValueUpdated();
+                if(_selectedColor != value) {
+                    _selectedColor = value;
+                    SelectedColorOnUpdate();
                 }
             }
         }
 
         public ColorInput()
         {
-            InitializeComponent();
-            _value = Color.Black;
+            SelectedColor = Color.Black;
         }
 
         protected override void OnClick(EventArgs e)
@@ -28,13 +27,13 @@ namespace CountAnything {
             var cld = new ColorDialog();
             var result = cld.ShowDialog();
             if(result == DialogResult.OK) {
-                Value = cld.Color;
+                SelectedColor = cld.Color;
             }
         }
 
-        private void ValueUpdated()
+        private void SelectedColorOnUpdate()
         {
-            BackColor = Value;
+            BackColor = SelectedColor;
         }
     }
 }

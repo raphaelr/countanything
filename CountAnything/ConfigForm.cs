@@ -13,9 +13,9 @@ namespace CountAnything {
             _config = Settings.Default.Config ?? CounterConfig.Default;
             numMax.Value = _config.Max;
             hotkeyIncrement.Hotkey = _config.Increment;
-            colorDone.Value = _config.Done;
-            colorNotDone.Value = _config.NotDone;
-            colorBackground.Value = _config.Background;
+            colorDone.SelectedColor = _config.Done;
+            colorNotDone.SelectedColor = _config.NotDone;
+            colorBackground.SelectedColor = _config.Background;
             fontInput.Font = _config.Font;
             textFormat.Text = _config.Format;
         }
@@ -41,9 +41,9 @@ namespace CountAnything {
         {
             _config.Max = (int) numMax.Value;
             _config.Increment = hotkeyIncrement.Hotkey;
-            _config.Done = colorDone.Value;
-            _config.NotDone = colorNotDone.Value;
-            _config.Background = colorBackground.Value;
+            _config.Done = colorDone.SelectedColor;
+            _config.NotDone = colorNotDone.SelectedColor;
+            _config.Background = colorBackground.SelectedColor;
             _config.Font = fontInput.Font;
             _config.Format = textFormat.Text;
         }
