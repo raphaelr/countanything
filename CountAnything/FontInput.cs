@@ -1,8 +1,10 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace CountAnything {
+    [DesignerCategory("")]
     class FontInput : TextBox {
         private FontDescription _selectedFont;
         

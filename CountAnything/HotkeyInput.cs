@@ -1,6 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace CountAnything {
+    [DesignerCategory("")]
     public class HotkeyInput : TextBox {
         private Hotkey _hotkey;
         public Hotkey Hotkey
