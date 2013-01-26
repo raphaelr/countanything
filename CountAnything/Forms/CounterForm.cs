@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace CountAnything {
+namespace CountAnything.Forms {
     public partial class CounterForm : Form {
         private const int OuterPadding = 5;
         private const int IncrementId = 1;

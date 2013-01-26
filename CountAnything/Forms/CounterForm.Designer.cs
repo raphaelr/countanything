@@ -1,4 +1,4 @@
-﻿namespace CountAnything {
+namespace CountAnything.Forms {
     partial class CounterForm {
         /// <summary>
         /// Required designer variable.

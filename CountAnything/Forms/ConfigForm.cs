@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using CountAnything.Properties;
 
-namespace CountAnything {
+namespace CountAnything.Forms {
     public partial class ConfigForm : Form {
         private readonly CounterConfig _config;
 

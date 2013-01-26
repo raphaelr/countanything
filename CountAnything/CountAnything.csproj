@@ -43,38 +43,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorInput.cs">
+    <Compile Include="Controls\ColorInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ConfigForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Controls\FontInput.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ConfigForm.Designer.cs">
-      <DependentUpon>ConfigForm.cs</DependentUpon>
+    <Compile Include="Controls\HotkeyInput.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="CounterConfig.cs" />
     <Compile Include="FontDescription.cs" />
-    <Compile Include="FontInput.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Hotkey.cs" />
-    <Compile Include="HotkeyAPI.cs" />
-    <Compile Include="HotkeyInput.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CounterForm.cs">
+    <Compile Include="Forms\ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CounterForm.Designer.cs">
+    <Compile Include="Forms\ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CounterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CounterForm.Designer.cs">
       <DependentUpon>CounterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hotkey.cs" />
+    <Compile Include="Hotkeys\HotkeyAPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ConfigForm.resx">
+    <EmbeddedResource Include="Forms\ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="CounterForm.resx">
+    <EmbeddedResource Include="Forms\CounterForm.resx">
       <DependentUpon>CounterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

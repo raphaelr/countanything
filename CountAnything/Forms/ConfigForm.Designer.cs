@@ -1,4 +1,6 @@
-﻿namespace CountAnything {
+using CountAnything.Controls;
+
+namespace CountAnything.Forms {
     partial class ConfigForm {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +39,11 @@
             this.textFormat = new System.Windows.Forms.TextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.fontInput = new CountAnything.FontInput();
-            this.colorBackground = new CountAnything.ColorInput();
-            this.colorDone = new CountAnything.ColorInput();
-            this.colorNotDone = new CountAnything.ColorInput();
-            this.hotkeyIncrement = new CountAnything.HotkeyInput();
+            this.fontInput = new FontInput();
+            this.colorBackground = new ColorInput();
+            this.colorDone = new ColorInput();
+            this.colorNotDone = new ColorInput();
+            this.hotkeyIncrement = new HotkeyInput();
             ((System.ComponentModel.ISupportInitialize)(this.numMax)).BeginInit();
             this.SuspendLayout();
             // 
