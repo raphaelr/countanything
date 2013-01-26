@@ -27,7 +27,6 @@ namespace CountAnything.Forms {
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigForm));
             this.label1 = new System.Windows.Forms.Label();
             this.numMax = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,14 +38,14 @@ namespace CountAnything.Forms {
             this.textFormat = new System.Windows.Forms.TextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numDoubleTapPrevention = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.fontInput = new CountAnything.Controls.FontInput();
             this.colorBackground = new CountAnything.Controls.ColorInput();
             this.colorDone = new CountAnything.Controls.ColorInput();
             this.colorNotDone = new CountAnything.Controls.ColorInput();
             this.hotkeyIncrement = new CountAnything.Controls.HotkeyInput();
-            this.label9 = new System.Windows.Forms.Label();
-            this.numDoubleTapPrevention = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDoubleTapPrevention)).BeginInit();
             this.SuspendLayout();
@@ -153,12 +152,42 @@ namespace CountAnything.Forms {
             this.label8.TabIndex = 15;
             this.label8.Text = "These settings are saved automatically.";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 209);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Double Tap Prevention:";
+            // 
+            // numDoubleTapPrevention
+            // 
+            this.numDoubleTapPrevention.Location = new System.Drawing.Point(138, 207);
+            this.numDoubleTapPrevention.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.numDoubleTapPrevention.Name = "numDoubleTapPrevention";
+            this.numDoubleTapPrevention.Size = new System.Drawing.Size(67, 20);
+            this.numDoubleTapPrevention.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(211, 209);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "ms";
+            // 
             // fontInput
             // 
             this.fontInput.Location = new System.Drawing.Point(112, 180);
             this.fontInput.Name = "fontInput";
             this.fontInput.ReadOnly = true;
-            this.fontInput.SelectedFont = ((CountAnything.FontDescription)(resources.GetObject("fontInput.SelectedFont")));
+            this.fontInput.SelectedFont = null;
             this.fontInput.Size = new System.Drawing.Size(240, 20);
             this.fontInput.TabIndex = 11;
             this.fontInput.Text = "Microsoft Sans Serif 8,25 Regular";
@@ -196,40 +225,11 @@ namespace CountAnything.Forms {
             // hotkeyIncrement
             // 
             this.hotkeyIncrement.Hotkey = null;
-            this.hotkeyIncrement.Location = new System.Drawing.Point(112, 38);
+            this.hotkeyIncrement.Location = new System.Drawing.Point(112, 35);
+            this.hotkeyIncrement.Margin = new System.Windows.Forms.Padding(0);
             this.hotkeyIncrement.Name = "hotkeyIncrement";
-            this.hotkeyIncrement.Size = new System.Drawing.Size(240, 20);
+            this.hotkeyIncrement.Size = new System.Drawing.Size(240, 31);
             this.hotkeyIncrement.TabIndex = 2;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 209);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Double Tap Prevention:";
-            // 
-            // numDoubleTapPrevention
-            // 
-            this.numDoubleTapPrevention.Location = new System.Drawing.Point(138, 207);
-            this.numDoubleTapPrevention.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.numDoubleTapPrevention.Name = "numDoubleTapPrevention";
-            this.numDoubleTapPrevention.Size = new System.Drawing.Size(67, 20);
-            this.numDoubleTapPrevention.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(211, 209);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "ms";
             // 
             // ConfigForm
             // 

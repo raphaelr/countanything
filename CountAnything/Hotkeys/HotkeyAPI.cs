@@ -14,6 +14,8 @@ namespace CountAnything.Hotkeys {
 
         public static void Register(IWin32Window owner, int id, Hotkey hotkey)
         {
+            if(hotkey == null) return;
+
             uint modifiers = 0;
             if(hotkey.Alt) modifiers |= 0x0001;
             if(hotkey.Control) modifiers |= 0x0002;

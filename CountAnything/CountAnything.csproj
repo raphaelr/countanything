@@ -50,7 +50,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\HotkeyInput.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CounterConfig.cs" />
     <Compile Include="FontDescription.cs" />
