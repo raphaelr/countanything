@@ -48,6 +48,7 @@
             this.fontInput = new CountAnything.Controls.FontInput();
             this.textFormat = new System.Windows.Forms.TextBox();
             this.linkFormatHelp = new System.Windows.Forms.LinkLabel();
+            this.linkGeneralFormatHelp = new System.Windows.Forms.LinkLabel();
             this.tabPageHotkeys = new System.Windows.Forms.TabPage();
             this.tableHotkeys = new System.Windows.Forms.TableLayoutPanel();
             this.hotkeyReset = new CountAnything.Controls.HotkeyInput();
@@ -299,7 +300,8 @@
             this.tableDisplay.Controls.Add(this.fontInput, 1, 3);
             this.tableDisplay.Controls.Add(label6, 0, 4);
             this.tableDisplay.Controls.Add(this.textFormat, 1, 4);
-            this.tableDisplay.Controls.Add(this.linkFormatHelp, 1, 5);
+            this.tableDisplay.Controls.Add(this.linkFormatHelp, 0, 5);
+            this.tableDisplay.Controls.Add(this.linkGeneralFormatHelp, 1, 5);
             this.tableDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableDisplay.Location = new System.Drawing.Point(3, 3);
             this.tableDisplay.Name = "tableDisplay";
@@ -376,7 +378,7 @@
             this.linkFormatHelp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.linkFormatHelp.AutoSize = true;
-            this.linkFormatHelp.Location = new System.Drawing.Point(103, 120);
+            this.linkFormatHelp.Location = new System.Drawing.Point(3, 120);
             this.linkFormatHelp.Name = "linkFormatHelp";
             this.linkFormatHelp.Size = new System.Drawing.Size(75, 20);
             this.linkFormatHelp.TabIndex = 6;
@@ -384,6 +386,20 @@
             this.linkFormatHelp.Text = "Format indices";
             this.linkFormatHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkFormatHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkFormatHelpOnLinkClicked);
+            // 
+            // linkGeneralFormatHelp
+            // 
+            this.linkGeneralFormatHelp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.linkGeneralFormatHelp.AutoSize = true;
+            this.linkGeneralFormatHelp.Location = new System.Drawing.Point(103, 120);
+            this.linkGeneralFormatHelp.Name = "linkGeneralFormatHelp";
+            this.linkGeneralFormatHelp.Size = new System.Drawing.Size(116, 20);
+            this.linkGeneralFormatHelp.TabIndex = 7;
+            this.linkGeneralFormatHelp.TabStop = true;
+            this.linkGeneralFormatHelp.Text = "General formatting help";
+            this.linkGeneralFormatHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkGeneralFormatHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkGeneralFormatHelpOnLinkClicked);
             // 
             // tabPageHotkeys
             // 
@@ -555,5 +571,6 @@
         private Controls.HotkeyInput hotkeyIncrement;
         private Controls.HotkeyInput hotkeyReset;
         private Controls.HotkeyInput hotkeyDecrement;
+        private System.Windows.Forms.LinkLabel linkGeneralFormatHelp;
     }
 }

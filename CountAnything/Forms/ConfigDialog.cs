@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace CountAnything.Forms {
@@ -82,6 +83,12 @@ namespace CountAnything.Forms {
                                 "Note: for #3, you can use the percentage format specifier, like this: {3:p}";
 
             MessageBox.Show(text, "Format string indices", MessageBoxButtons.OK);
+        }
+
+        private void LinkGeneralFormatHelpOnLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            const string url = "http://msdn.microsoft.com/en-us/library/txafckwd(v=vs.80).aspx";
+            Process.Start(url);
         }
     }
 }
