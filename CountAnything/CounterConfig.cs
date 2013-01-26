@@ -13,6 +13,7 @@ namespace CountAnything {
         public Color ColorDone { get; set; }
         public Color ColorBackground { get; set; }
         public FontDescription Font { get; set; }
+        public bool StayOnTop { get; set; }
 
         public Hotkey HotkeyIncrement { get; set; }
 
@@ -29,6 +30,7 @@ namespace CountAnything {
                     ColorDone = Color.LimeGreen,
                     ColorBackground = Color.Black,
                     Font = new FontDescription("Arial", 40, FontStyle.Bold),
+                    StayOnTop = true,
 
                     HotkeyIncrement = new Hotkey {
                         Alt = false,
