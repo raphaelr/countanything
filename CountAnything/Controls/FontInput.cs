@@ -6,6 +6,8 @@ using System.Windows.Forms;
 namespace CountAnything.Controls {
     [DesignerCategory("")]
     class FontInput : TextBox {
+        public event EventHandler<EventArgs> SelectedFontChanged;
+
         private FontDescription _selectedFont;
         
         public FontDescription SelectedFont
@@ -15,7 +17,7 @@ namespace CountAnything.Controls {
             {
                 if(_selectedFont == value) return;
                 _selectedFont = value;
-                SelectedFontOnUpdate();
+                OnSelectedFontChanged();
             }
         }
 
@@ -23,7 +25,6 @@ namespace CountAnything.Controls {
         {
             ReadOnly = true;
             SelectedFont = FontDescription.FromFont(SystemFonts.DefaultFont);
-            SelectedFontOnUpdate();
         }
 
         protected override void OnClick(EventArgs e)
@@ -35,9 +36,11 @@ namespace CountAnything.Controls {
             }
         }
 
-        private void SelectedFontOnUpdate()
+        protected virtual void OnSelectedFontChanged()
         {
             Text = SelectedFont == null ? "(null)" : SelectedFont.ToString();
+            var handler = SelectedFontChanged;
+            if(handler != null) handler(this, EventArgs.Empty);
         }
     }
 }

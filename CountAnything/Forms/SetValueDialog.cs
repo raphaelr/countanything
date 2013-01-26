@@ -2,10 +2,10 @@
 using System.Windows.Forms;
 
 namespace CountAnything.Forms {
-    public partial class SetValueForm : Form {
+    public partial class SetValueDialog : Form {
         public int Value { get; private set; }
 
-        public SetValueForm(int oldValue)
+        public SetValueDialog(int oldValue)
         {
             InitializeComponent();
             numValue.Value = Value = oldValue;

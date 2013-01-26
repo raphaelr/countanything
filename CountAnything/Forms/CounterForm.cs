@@ -20,15 +20,30 @@ namespace CountAnything.Forms {
             }
         }
 
-        private readonly CounterConfig _config;
+        private CounterConfig Config
+        {
+            get { return _config; }
+            set
+            {
+                if(_config == value) return;
+                if(_config != null) {
+                    _config.PropertyChanged -= ConfigOnPropertyChanged;
+                    UnmapHotkeys();
+                }
+
+                _config = value;
+                _config.PropertyChanged += ConfigOnPropertyChanged;
+                ConfigInitialLoad();
+            }
+        }
+
         private readonly HotkeyManager _hotkeyManager;
         private HotkeyHandle _hotkeyIncrement, _hotkeyDecrement, _hotkeyReset;
         private int _value;
+        private CounterConfig _config;
 
         public CounterForm()
         {
-            _config = Program.LoadConfig();
-            _config.PropertyChanged += ConfigOnPropertyChanged;
             _hotkeyManager = new HotkeyManager();
             InitializeComponent();
         }
@@ -36,10 +51,10 @@ namespace CountAnything.Forms {
         protected override void OnLoad(EventArgs e)
         {
             WindowDragHelper.EnableDrag(this, textCounter);
-            ConfigInitialLoad();
+            Config = Program.LoadConfig();
             ValueUpdated();
             
-            stayonTopToolStripMenuItem.Checked = _config.StayOnTop;
+            stayonTopToolStripMenuItem.Checked = Config.StayOnTop;
         }
 
         private void ConfigOnPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -54,6 +69,8 @@ namespace CountAnything.Forms {
                 ConfigStayOnTopUpdated();
             } else if(e.PropertyName == "Max") {
                 ConfigMaxUpdated();
+            } else if(e.PropertyName == "Format") {
+                ConfigFormatUpdated();
             }
         }
 
@@ -79,41 +96,47 @@ namespace CountAnything.Forms {
 
         private void ConfigHotkeysUpdated()
         {
-            if(_hotkeyIncrement != null) _hotkeyIncrement.Unmap();
-            if(_hotkeyDecrement != null) _hotkeyDecrement.Unmap();
-            if(_hotkeyReset != null) _hotkeyReset.Unmap();
+            UnmapHotkeys();
 
-            _hotkeyIncrement = _hotkeyManager.Map(_config.HotkeyIncrement, Increment);
-            _hotkeyDecrement = _hotkeyManager.Map(_config.HotkeyDecrement, Decrement);
-            _hotkeyReset = _hotkeyManager.Map(_config.HotkeyReset, Reset);
+            _hotkeyIncrement = _hotkeyManager.Map(Config.HotkeyIncrement, Increment);
+            _hotkeyDecrement = _hotkeyManager.Map(Config.HotkeyDecrement, Decrement);
+            _hotkeyReset = _hotkeyManager.Map(Config.HotkeyReset, Reset);
         }
 
         private void ConfigStayOnTopUpdated()
         {
-            TopMost = _config.StayOnTop;
+            TopMost = Config.StayOnTop;
         }
 
         private void ConfigColorsUpdated()
         {
-            BackColor = _config.ColorBackground;
+            BackColor = Config.ColorBackground;
             UpdateTextColor();
         }
 
         private void ConfigFontUpdated()
         {
-            textCounter.Font = _config.Font.CreateFont();
+            textCounter.Font = Config.Font.CreateFont();
             UpdateSize();
+        }
+
+        private void ConfigFormatUpdated()
+        {
+            try {
+                UpdateSize();
+                ValueUpdated();
+            } catch(FormatException) { }
         }
 
         private void UpdateTextColor()
         {
-            textCounter.ForeColor = Value >= _config.Max ? _config.ColorDone : _config.ColorNotDone;
+            textCounter.ForeColor = Value >= Config.Max ? Config.ColorDone : Config.ColorNotDone;
         }
 
         private void UpdateSize()
         {
             var graphics = CreateGraphics();
-            var maxDimension = graphics.MeasureString(Format(_config.Max), textCounter.Font,
+            var maxDimension = graphics.MeasureString(Format(Config.Max), textCounter.Font,
                                                       int.MaxValue);
             ClientSize = new Size(OuterPadding + (int) maxDimension.Width,
                                   OuterPadding + (int) maxDimension.Height);
@@ -127,8 +150,15 @@ namespace CountAnything.Forms {
 
         private string Format(int value)
         {
-            return string.Format(_config.Format, value, _config.Max, _config.Max - value,
-                                 (float)value / (float)_config.Max);
+            return string.Format(Config.Format, value, Config.Max, Config.Max - value,
+                                 (float)value / (float)Config.Max);
+        }
+        
+        private void UnmapHotkeys()
+        {
+            if(_hotkeyIncrement != null) _hotkeyIncrement.Unmap();
+            if(_hotkeyDecrement != null) _hotkeyDecrement.Unmap();
+            if(_hotkeyReset != null) _hotkeyReset.Unmap();
         }
 
         private void Increment()
@@ -154,7 +184,7 @@ namespace CountAnything.Forms {
 
         protected override void OnClosed(EventArgs e)
         {
-            Program.SaveConfig(_config);
+            Program.SaveConfig(Config);
         }
 
         #region Context Menu Handlers
@@ -176,15 +206,27 @@ namespace CountAnything.Forms {
 
         private void MenuSetValueOnClick(object sender, EventArgs e)
         {
-            var svf = new SetValueForm(Value);
-            if(svf.ShowDialog() == DialogResult.OK) {
-                Value = svf.Value;
+            var svd = new SetValueDialog(Value);
+            if(svd.ShowDialog() == DialogResult.OK) {
+                Value = svd.Value;
+            }
+        }
+
+        private void MenuConfigureOnClick(object sender, EventArgs e)
+        {
+            var tempConfig = CloneHelper.Clone(Config);
+            var originalConfig = Config;
+            Config = tempConfig;
+
+            var cfg = new ConfigDialog(tempConfig);
+            if(cfg.ShowDialog() != DialogResult.OK) {
+                Config = originalConfig;
             }
         }
 
         private void MenuStayOnTopOnCheckedChanged(object sender, EventArgs e)
         {
-            _config.StayOnTop = stayonTopToolStripMenuItem.Checked;
+            Config.StayOnTop = stayonTopToolStripMenuItem.Checked;
         }
 
         private void MenuAboutOnClick(object sender, EventArgs e)

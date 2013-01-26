@@ -107,6 +107,7 @@ namespace CountAnything.Forms {
             this.configureToolStripMenuItem.Name = "configureToolStripMenuItem";
             this.configureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.configureToolStripMenuItem.Text = "&Configure...";
+            this.configureToolStripMenuItem.Click += new System.EventHandler(this.MenuConfigureOnClick);
             // 
             // stayonTopToolStripMenuItem
             // 

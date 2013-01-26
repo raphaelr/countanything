@@ -1,5 +1,5 @@
 ﻿namespace CountAnything.Forms {
-    partial class SetValueForm {
+    partial class SetValueDialog {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -70,7 +70,7 @@
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.ButtonOkOnClick);
             // 
-            // SetValueForm
+            // SetValueDialog
             // 
             this.AcceptButton = this.buttonOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -81,7 +81,7 @@
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SetValueForm";
+            this.Name = "SetValueDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Set value";
             this.tableLayoutPanel.ResumeLayout(false);

@@ -6,6 +6,8 @@ using System.Windows.Forms;
 namespace CountAnything.Controls {
     [DesignerCategory("")]
     class ColorInput : UserControl {
+        public event EventHandler<EventArgs> SelectedColorChanged;
+
         private Color _selectedColor;
         public Color SelectedColor
         {
@@ -14,7 +16,7 @@ namespace CountAnything.Controls {
             {
                 if(_selectedColor != value) {
                     _selectedColor = value;
-                    SelectedColorOnUpdate();
+                    OnSelectedColorChanged();
                 }
             }
         }
@@ -22,6 +24,7 @@ namespace CountAnything.Controls {
         public ColorInput()
         {
             SelectedColor = Color.Black;
+            BorderStyle = BorderStyle.FixedSingle;
         }
 
         protected override void OnClick(EventArgs e)
@@ -33,9 +36,11 @@ namespace CountAnything.Controls {
             }
         }
 
-        private void SelectedColorOnUpdate()
+        protected virtual void OnSelectedColorChanged()
         {
             BackColor = SelectedColor;
+            var handler = SelectedColorChanged;
+            if(handler != null) handler(this, EventArgs.Empty);
         }
     }
 }
