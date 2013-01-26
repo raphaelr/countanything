@@ -271,7 +271,7 @@
             0,
             0,
             0});
-            this.numMax.ValueChanged += new System.EventHandler(this.NumMaxOnValueChanged);
+            this.numMax.ValueChanged += new System.EventHandler(this.NumMaxOnChanged);
             // 
             // tabPageDisplay
             // 
@@ -324,7 +324,7 @@
             this.colorBackground.SelectedColor = System.Drawing.Color.Black;
             this.colorBackground.Size = new System.Drawing.Size(277, 18);
             this.colorBackground.TabIndex = 3;
-            this.colorBackground.SelectedColorChanged += new System.EventHandler<System.EventArgs>(this.ColorBackgroundOnSelectedColorChanged);
+            this.colorBackground.SelectedColorChanged += new System.EventHandler<System.EventArgs>(this.ColorBackgroundOnChanged);
             // 
             // colorNotDone
             // 
@@ -336,7 +336,7 @@
             this.colorNotDone.SelectedColor = System.Drawing.Color.Black;
             this.colorNotDone.Size = new System.Drawing.Size(277, 18);
             this.colorNotDone.TabIndex = 1;
-            this.colorNotDone.SelectedColorChanged += new System.EventHandler<System.EventArgs>(this.ColorNotDoneOnSelectedColorChanged);
+            this.colorNotDone.SelectedColorChanged += new System.EventHandler<System.EventArgs>(this.ColorNotDoneOnChanged);
             // 
             // colorDone
             // 
@@ -348,7 +348,7 @@
             this.colorDone.SelectedColor = System.Drawing.Color.Black;
             this.colorDone.Size = new System.Drawing.Size(277, 18);
             this.colorDone.TabIndex = 2;
-            this.colorDone.SelectedColorChanged += new System.EventHandler<System.EventArgs>(this.ColorDoneOnSelectedColorChanged);
+            this.colorDone.SelectedColorChanged += new System.EventHandler<System.EventArgs>(this.ColorDoneOnChanged);
             // 
             // fontInput
             // 
@@ -360,7 +360,7 @@
             this.fontInput.Size = new System.Drawing.Size(277, 20);
             this.fontInput.TabIndex = 4;
             this.fontInput.Text = "(null)";
-            this.fontInput.SelectedFontChanged += new System.EventHandler<System.EventArgs>(this.FontInputOnSelectedFontChanged);
+            this.fontInput.SelectedFontChanged += new System.EventHandler<System.EventArgs>(this.FontInputOnChanged);
             // 
             // textFormat
             // 
@@ -369,7 +369,7 @@
             this.textFormat.Name = "textFormat";
             this.textFormat.Size = new System.Drawing.Size(277, 20);
             this.textFormat.TabIndex = 5;
-            this.textFormat.TextChanged += new System.EventHandler(this.TextFormatOnTextChanged);
+            this.textFormat.TextChanged += new System.EventHandler(this.TextFormatOnChanged);
             // 
             // linkFormatHelp
             // 

@@ -42,32 +42,32 @@ namespace CountAnything.Forms {
             Close();
         }
 
-        private void NumMaxOnValueChanged(object sender, EventArgs e)
+        private void NumMaxOnChanged(object sender, EventArgs e)
         {
             _config.Max = (int) numMax.Value;
         }
 
-        private void ColorNotDoneOnSelectedColorChanged(object sender, EventArgs e)
+        private void ColorNotDoneOnChanged(object sender, EventArgs e)
         {
             _config.ColorNotDone = colorNotDone.SelectedColor;
         }
 
-        private void ColorDoneOnSelectedColorChanged(object sender, EventArgs e)
+        private void ColorDoneOnChanged(object sender, EventArgs e)
         {
             _config.ColorDone = colorDone.SelectedColor;
         }
 
-        private void ColorBackgroundOnSelectedColorChanged(object sender, EventArgs e)
+        private void ColorBackgroundOnChanged(object sender, EventArgs e)
         {
             _config.ColorBackground = colorBackground.SelectedColor;
         }
 
-        private void FontInputOnSelectedFontChanged(object sender, EventArgs e)
+        private void FontInputOnChanged(object sender, EventArgs e)
         {
             _config.Font = fontInput.SelectedFont;
         }
 
-        private void TextFormatOnTextChanged(object sender, EventArgs e)
+        private void TextFormatOnChanged(object sender, EventArgs e)
         {
             _config.Format = textFormat.Text;
         }
