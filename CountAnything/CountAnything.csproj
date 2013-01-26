@@ -54,12 +54,6 @@
     </Compile>
     <Compile Include="CounterConfig.cs" />
     <Compile Include="FontDescription.cs" />
-    <Compile Include="Forms\ConfigForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ConfigForm.Designer.cs">
-      <DependentUpon>ConfigForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CounterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,13 +69,11 @@
     <Compile Include="Forms\WindowDragHelper.cs" />
     <Compile Include="Hotkey.cs" />
     <Compile Include="Hotkeys\HotkeyApi.cs" />
+    <Compile Include="Hotkeys\HotkeyHandle.cs" />
     <Compile Include="Hotkeys\HotkeyManager.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\ConfigForm.resx">
-      <DependentUpon>ConfigForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CounterForm.resx">
       <DependentUpon>CounterForm.cs</DependentUpon>
     </EmbeddedResource>

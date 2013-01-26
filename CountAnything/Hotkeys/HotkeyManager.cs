@@ -18,7 +18,7 @@ namespace CountAnything.Hotkeys {
             _agent.HotkeyTriggered += AgentOnHotkeyTriggered;
         }
 
-        public void Map(Hotkey hotkey, HotkeyHandler action)
+        public HotkeyHandle Map(Hotkey hotkey, HotkeyHandler action)
         {
             var mapping = new HotkeyMapping {
                 Hotkey = hotkey,
@@ -27,11 +27,8 @@ namespace CountAnything.Hotkeys {
             };
 
             _agent.AddMapping(mapping);
-        }
-        
-        public void Unmap(Hotkey hotkey)
-        {
-            _agent.RemoveMappingByHotkey(hotkey);
+
+            return HotkeyHandle.Create(() => _agent.RemoveMappingByHotkey(hotkey));
         }
 
         private void AgentOnHotkeyTriggered(object sender, HotkeyEventArgs e)
