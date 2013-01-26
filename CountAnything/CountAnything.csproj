@@ -66,6 +66,7 @@
     <Compile Include="Forms\CounterForm.Designer.cs">
       <DependentUpon>CounterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WindowDragHelper.cs" />
     <Compile Include="Hotkey.cs" />
     <Compile Include="Hotkeys\HotkeyAPI.cs" />
     <Compile Include="Program.cs" />

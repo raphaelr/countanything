@@ -16,6 +16,7 @@ namespace CountAnything.Forms {
             _config = config;
             _font = _config.Font.CreateFont();
             InitializeComponent();
+            WindowDragHelper.EnableDrag(this, textCounter);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -46,11 +47,15 @@ namespace CountAnything.Forms {
 
         protected override void WndProc(ref Message m)
         {
-            base.WndProc(ref m);
-
-            if(m.Msg == 0x0312 && (int) m.WParam == IncrementId) {
-                Increment();
+            switch(m.Msg) {
+            case 0x0312:
+                if((int)m.WParam == IncrementId) {
+                    Increment();
+                }
+                return;
             }
+
+            base.WndProc(ref m);
         }
         
         protected override void OnResize(EventArgs e)

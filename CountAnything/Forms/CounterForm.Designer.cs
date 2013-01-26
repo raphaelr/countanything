@@ -32,7 +32,7 @@ namespace CountAnything.Forms {
             // 
             this.textCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textCounter.AutoSize = true;
-            this.textCounter.Location = new System.Drawing.Point(12, 15);
+            this.textCounter.Location = new System.Drawing.Point(58, 36);
             this.textCounter.Name = "textCounter";
             this.textCounter.Size = new System.Drawing.Size(103, 13);
             this.textCounter.TabIndex = 0;
@@ -43,9 +43,9 @@ namespace CountAnything.Forms {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(116, 37);
+            this.ClientSize = new System.Drawing.Size(208, 78);
             this.Controls.Add(this.textCounter);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "CounterForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
