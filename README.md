@@ -1,8 +1,8 @@
 CountAnything
 =============
-**[Project homepage](https://github.com/raphaelr/countanything)**
+**[Project homepage](http://github.com/raphaelr/countanything)** - **[Download link](https://dl.dropbox.com/u/104907125/CountAnything.zip)**
 
-This is a generic counting application. It allows the user to have a counter. Which counts. It's that simple. It was designed for the [speedrunning community](http://speedrunslive.com). If you see [tape1](http://twitch.tv/tape1) streaming, say hi!
+This is a generic (Windows-only) counting application. It allows the user to have a counter. Which counts. It's that simple. It was designed for the [speedrunning community](http://speedrunslive.com). If you see [tape1](http://twitch.tv/tape1) streaming, say hi!
 
 Screenshots?
 ------------
@@ -26,6 +26,12 @@ Open the solution in Visual Studio 2010 and press "F6". Or use MSBuild.
 Installation
 ------------
 None. Extract the executable somewhere and you're ready to go.
+
+Something doesn't work
+----------------------
+If you have a problem with the application or want a feature to be added, feel free to create an issue by clicking on the "Issues" link above.
+
+If you don't want to create a GitHub account, you can also send me an E-Mail. My first name is Raphael, and my E-mail address is `(my first name)@tapesoftware.net`.
 
 Licence Agreement
 -----------------
