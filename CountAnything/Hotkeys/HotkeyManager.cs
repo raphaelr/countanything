@@ -72,6 +72,7 @@ namespace CountAnything.Hotkeys {
             {
                 for(var i = 0; i < _mappings.Count; i++) {
                     if(_mappings[i].Hotkey == hotkey) {
+                        UnregisterMapping(_mappings[i]);
                         _mappings.RemoveAt(i);
                         break;
                     }
