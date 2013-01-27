@@ -71,6 +71,8 @@ namespace CountAnything.Forms {
                 ConfigMaxUpdated();
             } else if(e.PropertyName == "Format") {
                 ConfigFormatUpdated();
+            } else if(e.PropertyName == "DoubleTapPrevention") {
+                ConfigDoubleTapPreventionUpdated();
             }
         }
 
@@ -87,6 +89,7 @@ namespace CountAnything.Forms {
             ConfigStayOnTopUpdated();
             ConfigColorsUpdated();
             ConfigFontUpdated();
+            ConfigDoubleTapPreventionUpdated();
         }
 
         private void ConfigMaxUpdated()
@@ -126,6 +129,11 @@ namespace CountAnything.Forms {
                 UpdateSize();
                 ValueUpdated();
             } catch(FormatException) { }
+        }
+
+        private void ConfigDoubleTapPreventionUpdated()
+        {
+            _hotkeyManager.DoubleTapPrevention = _config.DoubleTapPrevention;
         }
 
         private void UpdateTextColor()
@@ -219,6 +227,7 @@ namespace CountAnything.Forms {
             Config = tempConfig;
 
             var cfg = new ConfigDialog(tempConfig);
+            cfg.TopMost = TopMost;
             if(cfg.ShowDialog() != DialogResult.OK) {
                 Config = originalConfig;
             }

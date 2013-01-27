@@ -152,7 +152,7 @@ namespace CountAnything {
                     ColorNotDone = Color.Orange,
                     ColorDone = Color.LimeGreen,
                     ColorBackground = Color.Black,
-                    Font = new FontDescription("Arial", 40, FontStyle.Bold),
+                    Font = new FontDescription("Verdana", 48, FontStyle.Bold),
                     StayOnTop = true,
 
                     HotkeyIncrement = new Hotkey {

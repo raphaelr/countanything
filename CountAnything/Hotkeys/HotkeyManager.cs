@@ -33,10 +33,9 @@ namespace CountAnything.Hotkeys {
 
         private void AgentOnHotkeyTriggered(object sender, HotkeyEventArgs e)
         {
-            if(e.Mapping.LastPress + DoubleTapPrevention < DateTime.Now) {
-                e.Mapping.LastPress = DateTime.Now;
-                e.Mapping.Action();
-            }
+            if(e.Mapping.LastPress + DoubleTapPrevention.TotalMilliseconds > Environment.TickCount) return;
+            e.Mapping.LastPress = Environment.TickCount;
+            e.Mapping.Action();
         }
 
         private class HotkeyMapping {
@@ -44,7 +43,7 @@ namespace CountAnything.Hotkeys {
             public HotkeyHandler Action;
             public int Id;
             public bool Registered;
-            public DateTime LastPress;
+            public int LastPress;
         }
 
         private class Agent : Form {
