@@ -94,6 +94,7 @@ namespace CountAnything.Forms {
 
         private void ConfigMaxUpdated()
         {
+            UpdateSize();
             ValueUpdated();
         }
 
