@@ -25,6 +25,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetValueDialog));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.numValue = new System.Windows.Forms.NumericUpDown();
             this.buttonOk = new System.Windows.Forms.Button();
@@ -78,6 +79,7 @@
             this.ClientSize = new System.Drawing.Size(284, 27);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

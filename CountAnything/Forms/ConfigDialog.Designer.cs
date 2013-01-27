@@ -36,6 +36,7 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigDialog));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.tableGeneral = new System.Windows.Forms.TableLayoutPanel();
@@ -528,6 +529,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.tabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConfigDialog";
             this.Text = "CountAnything: Configuration";
             this.tabControl.ResumeLayout(false);

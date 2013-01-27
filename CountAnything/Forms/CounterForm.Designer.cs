@@ -26,6 +26,7 @@ namespace CountAnything.Forms {
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CounterForm));
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.incrementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decrementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,6 +142,7 @@ namespace CountAnything.Forms {
             this.ClientSize = new System.Drawing.Size(208, 78);
             this.Controls.Add(this.textCounter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "CounterForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
