@@ -29,6 +29,7 @@ namespace CountAnything.Controls {
         protected override void OnClick(EventArgs e)
         {
             var cld = new ColorDialog();
+            cld.Color = SelectedColor;
             var result = cld.ShowDialog();
             if(result == DialogResult.OK) {
                 SelectedColor = cld.Color;

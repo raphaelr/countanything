@@ -30,6 +30,7 @@ namespace CountAnything.Controls {
         protected override void OnClick(EventArgs e)
         {
             var fod = new FontDialog();
+            fod.Font = SelectedFont.CreateFont();
             if(fod.ShowDialog() == DialogResult.OK) {
                 SelectedFont = FontDescription.FromFont(fod.Font);
             }

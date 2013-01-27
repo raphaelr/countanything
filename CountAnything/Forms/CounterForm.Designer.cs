@@ -26,7 +26,6 @@ namespace CountAnything.Forms {
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textCounter = new System.Windows.Forms.Label();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.incrementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decrementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,20 +37,9 @@ namespace CountAnything.Forms {
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textCounter = new CountAnything.Controls.CrispLabel();
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textCounter
-            // 
-            this.textCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textCounter.AutoSize = true;
-            this.textCounter.ContextMenuStrip = this.contextMenuStrip;
-            this.textCounter.Location = new System.Drawing.Point(58, 36);
-            this.textCounter.Name = "textCounter";
-            this.textCounter.Size = new System.Drawing.Size(103, 13);
-            this.textCounter.TabIndex = 0;
-            this.textCounter.Text = "tape1 is the greatest";
-            this.textCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // contextMenuStrip
             // 
@@ -67,45 +55,45 @@ namespace CountAnything.Forms {
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(153, 214);
+            this.contextMenuStrip.Size = new System.Drawing.Size(137, 192);
             // 
             // incrementToolStripMenuItem
             // 
             this.incrementToolStripMenuItem.Name = "incrementToolStripMenuItem";
-            this.incrementToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.incrementToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.incrementToolStripMenuItem.Text = "&Increment";
             this.incrementToolStripMenuItem.Click += new System.EventHandler(this.MenuIncrementOnClick);
             // 
             // decrementToolStripMenuItem
             // 
             this.decrementToolStripMenuItem.Name = "decrementToolStripMenuItem";
-            this.decrementToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.decrementToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.decrementToolStripMenuItem.Text = "&Decrement";
             this.decrementToolStripMenuItem.Click += new System.EventHandler(this.MenuDecrementOnClick);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.resetToolStripMenuItem.Text = "&Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.MenuResetOnClick);
             // 
             // setValueToolStripMenuItem
             // 
             this.setValueToolStripMenuItem.Name = "setValueToolStripMenuItem";
-            this.setValueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setValueToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.setValueToolStripMenuItem.Text = "&Set value...";
             this.setValueToolStripMenuItem.Click += new System.EventHandler(this.MenuSetValueOnClick);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // configureToolStripMenuItem
             // 
             this.configureToolStripMenuItem.Name = "configureToolStripMenuItem";
-            this.configureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.configureToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.configureToolStripMenuItem.Text = "&Configure...";
             this.configureToolStripMenuItem.Click += new System.EventHandler(this.MenuConfigureOnClick);
             // 
@@ -113,28 +101,38 @@ namespace CountAnything.Forms {
             // 
             this.stayonTopToolStripMenuItem.CheckOnClick = true;
             this.stayonTopToolStripMenuItem.Name = "stayonTopToolStripMenuItem";
-            this.stayonTopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stayonTopToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.stayonTopToolStripMenuItem.Text = "Stay &on top";
             this.stayonTopToolStripMenuItem.CheckedChanged += new System.EventHandler(this.MenuStayOnTopOnCheckedChanged);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(133, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.MenuAboutOnClick);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.MenuExitOnClick);
+            // 
+            // textCounter
+            // 
+            this.textCounter.AutoSize = true;
+            this.textCounter.ContextMenuStrip = this.contextMenuStrip;
+            this.textCounter.Location = new System.Drawing.Point(71, 34);
+            this.textCounter.Name = "textCounter";
+            this.textCounter.Size = new System.Drawing.Size(71, 13);
+            this.textCounter.TabIndex = 1;
+            this.textCounter.Text = "tape software";
             // 
             // CounterForm
             // 
@@ -155,7 +153,6 @@ namespace CountAnything.Forms {
 
         #endregion
 
-        private System.Windows.Forms.Label textCounter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem incrementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem decrementToolStripMenuItem;
@@ -167,5 +164,6 @@ namespace CountAnything.Forms {
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private Controls.CrispLabel textCounter;
     }
 }

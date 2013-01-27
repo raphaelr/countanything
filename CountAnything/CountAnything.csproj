@@ -44,6 +44,9 @@
     <Compile Include="Controls\ColorInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\CrispLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\FontInput.cs">
       <SubType>Component</SubType>
     </Compile>
