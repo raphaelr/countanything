@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace CountAnything.Controls {
     [DesignerCategory("")]
     class CrispLabel : Label {
-        private SolidBrush _foreground;
+        private Brush _foreground = Brushes.Black;
 
         protected override void OnPaint(PaintEventArgs e)
         {
