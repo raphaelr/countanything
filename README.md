@@ -2,30 +2,46 @@ CountAnything
 =============
 **[Project homepage](http://tapesoftware.net/content/countanything)** - **[Download link](http://lambda.tapesoftware.net/CountAnything.zip)**
 
-This is a generic (Windows-only) counting application. It allows the user to have a counter. Which counts. It's that simple. It was designed for the [speedrunning community](http://speedrunslive.com). If you see [tape1](http://twitch.tv/tape1) streaming, say hi!
+![Main window](http://tapesoftware.net/sites/default/files/field/image/coa1.png)
 
-Screenshots?
-------------
-*Main window*:  
-![Main window](http://i.minus.com/jyBvVkSGZ72Gw.png)
+This is a generic (Windows-only) counting application. It allows the user to have a counter. Which counts. It's that simple. It was designed for the [speedrunning community](http://speedrunslive.com). If you see [tape1](http://twitch.tv/tape1) streaming, say hi!  
 
-*Configuration dialog:*  
-![Configuration dialog](http://i1.minus.com/j3drh6WUJr09q.png)
+Usage
+-----
+Start the CountAnything application and you will see the above window. You can move it around by clicking and dragging anywhere in the window. Right-Click to open the context menu, and click "Configure..." to open the configuration dialog (described in the next section).
 
+To include the counter in a live stream, use a software capture in OBS / whatever it's called in XSplit. You can use a color key to make the counter transparent.
 
 Configuration
 -------------
-Self-explanatory. Click on the colored boxes to change the color, and on the font field to change the font.
+The configuration dialog has three pages: *General*, *Display* and *Hotkeys*. All changes you make in this dialog are saved automatically and will be loaded the next time you start CountAnything.
 
-The "Format" option allows you to change the way the text is displayed. For example, if you set it to "{0} of {1}", the counter would display "15 of 60" instead of "15/60". For more information on what you can use in the format box, [go here](http://msdn.microsoft.com/en-us/library/txafckwd.aspx).
+### General
+![General config](http://tapesoftware.net/sites/default/files/field/image/coa2.png)
 
-Compiling
----------
+* *Count to what*: Target value of the counter.
+
+### Display
+![Display config](http://tapesoftware.net/sites/default/files/field/image/coa3.png)
+
+* *Not finished color:* Color of the counter when it has not reached the target value.
+* *Finished color:* Color of the counter when it has reached the target value.
+* *Background color:* Background color of the counter.
+* *Font:* Font used in the counter.
+* *Format:* Text format of the counter (i.e. the `{0}/{1}` resulted in the `18/60` in the screenshot above)
+
+### Hotkeys
+![Hotkeys config](http://tapesoftware.net/sites/default/files/field/image/coa4.png)
+
+* *Double Tap Prevention:* If a hotkey is twice in the specified timeframe, it will only be registered the first time.
+
+The hotkeys are self-explanatory. Click inside the boxes and press the desired key combination. Click on the "Clear" button to remove the hotkey.
+
+Compiling the Source Code
+-------------------------
+*(ignore this section if you use the download link above)*
+
 Open the solution in Visual Studio 2010 and press "F6". Or use MSBuild.
-
-Installation
-------------
-None. Extract the executable somewhere and you're ready to go.
 
 Something doesn't work
 ----------------------
