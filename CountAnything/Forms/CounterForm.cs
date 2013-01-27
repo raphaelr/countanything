@@ -216,6 +216,7 @@ namespace CountAnything.Forms {
         private void MenuSetValueOnClick(object sender, EventArgs e)
         {
             var svd = new SetValueDialog(Value);
+            svd.TopMost = TopMost;
             if(svd.ShowDialog() == DialogResult.OK) {
                 Value = svd.Value;
             }
