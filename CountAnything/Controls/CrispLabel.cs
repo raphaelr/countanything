@@ -11,7 +11,7 @@ namespace CountAnything.Controls {
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
             e.Graphics.DrawString(Text, Font, _foreground, 0, 0);
         }
 
