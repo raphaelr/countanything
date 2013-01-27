@@ -18,6 +18,7 @@ namespace CountAnything.Controls {
         protected override void OnForeColorChanged(EventArgs e)
         {
             _foreground = new SolidBrush(ForeColor);
+            base.OnForeColorChanged(e);
         }
     }
 }
